@@ -1,5 +1,27 @@
 <ion-list *ngFor="let alumno of alumnos">
-  <ion-item>
-    {{alumno}}
-  </ion-item>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item-options side="start">
+        <ion-item-option color="danger" expandable (click)="favorite()">
+          <ion-icon name="heart-outline" class="favorite" slot="start"></ion-icon>
+          Favorite
+        </ion-item-option>
+      </ion-item-options>
+      
+      <ion-item>
+        <ion-label>{{alumno}}</ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="tertiary" expandable (click)="delete()">
+          <ion-icon name="trash-outline" class="eliminate" slot="end"></ion-icon>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
 </ion-list>
+
+
+
+
+
